@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import Navbar from "../components/navbar";
 
-export default function Home() {
+export default function Microfront() {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,14 +17,9 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <Navbar />
+        <h2>Here will be some other app</h2>
       </main>
+      <Navbar />
 
       <footer className={styles.footer}>
         <a
