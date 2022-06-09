@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import Navbar from "../components/navbar";
+import {Box} from "@chakra-ui/react";
 
-export default function Microfront() {
+export default function Microfront({di_url}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,6 +18,14 @@ export default function Microfront() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <h2>Here will be some other app</h2>
+          <Box bg="red.100"> hi: {di_url}</Box>
+          <iframe id="inlineFrameExample"
+                  title="Inline Frame Example"
+                  width="400"
+                  height="400"
+                  src={di_url}>
+          </iframe>
+
       </main>
       <Navbar />
 
@@ -35,4 +43,13 @@ export default function Microfront() {
       </footer>
     </div>
   );
+}
+
+
+export async function getServerSideProps() {
+    // Fetch data from external API
+    // const res = await fetch(`https://.../data`)
+    // const data = await res.json()
+    const di_url  = process.env.DI_API || ''
+    return { props: { di_url } }
 }
